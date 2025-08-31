@@ -41,5 +41,3 @@ function saveTasks(tasks) {
 getTasks().forEach((task) => {
   addTaskToDOM(task.text, task.done);
 });
-
-console.log("YOLO");
