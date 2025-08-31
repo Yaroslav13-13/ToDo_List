@@ -28,3 +28,18 @@ taskList.addEventListener("click", function (e) {
     e.target.parentElement.remove();
   }
 });
+
+function getTasks() {
+  const tasks = localStorage.getItem("tasks");
+  return tasks ? JSON.parse(tasks) : [];
+}
+
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+getTasks().forEach((task) => {
+  addTaskToDOM(task.text, task.done);
+});
+
+console.log("YOLO");
